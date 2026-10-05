@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferrari Showcase - SF90 Stradale</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0b0b0b;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        .ferrari-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(11, 11, 11, 0.85)), 
+                        url('https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .luxury-card {
+            background: rgba(18, 18, 18, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 2px solid rgba(239, 68, 68, 0.4);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(239, 68, 68, 0.2);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+        }
+
+        .ferrari-gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #ff1e1e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .spec-badge {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .spec-badge:hover {
+            border-color: rgba(239, 68, 68, 0.8);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(239, 68, 68, 0.2);
+        }
+    </style>
+</head>
+<body class="ferrari-bg min-h-screen flex flex-col justify-between selection:bg-red-600 selection:text-white">
+
+    <header class="w-full py-6 px-8 flex justify-between items-center z-10">
+        <div class="flex items-center space-x-3">
+            <span class="text-3xl font-black tracking-widest text-red-600 text-glow">FERRARI</span>
+            <div class="h-6 w-[2px] bg-neutral-600"></div>
+            <span class="text-xs uppercase tracking-widest text-neutral-400 font-semibold">Maranello</span>
+        </div>
+        <nav class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-semibold text-neutral-300">
+            <a href="#overview" class="hover:text-red-500 transition-colors">Overview</a>
+            <a href="#specs" class="hover:text-red-500 transition-colors">Performance</a>
+            <a href="#heritage" class="hover:text-red-500 transition-colors">Heritage</a>
+        </nav>
+        <button class="bg-red-600 hover:bg-red-700 text-white text-xs uppercase tracking-widest font-bold px-6 py-3 rounded-full transition-all shadow-lg shadow-red-600/30">
+            Configure
+        </button>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 flex-grow flex items-center justify-center">
+        <div class="w-full max-w-4xl luxury-card rounded-3xl p-8 md:p-14 relative overflow-hidden">
+            <!-- Decorative background badge -->
+            <div class="absolute -right-16 -top-16 text-red-600/10 font-black text-9xl select-none pointer-events-none">
+                SF90
+            </div>
+
+            <div class="relative z-10 flex flex-col md:flex-row gap-8 items-center">
+                <!-- Left Column: Details -->
+                <div class="w-full md:w-1/2 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-red-600/20 border border-red-500/30 px-3 py-1 rounded-full">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-red-400">PHEV Hypercar</span>
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight uppercase leading-none">
+                        SF90 <span class="ferrari-gradient-text block mt-1">Stradale</span>
+                    </h1>
+
+                    <p class="text-neutral-400 text-sm md:text-base leading-relaxed">
+                        Redefining the pinnacle of performance and engineering excellence. The SF90 Stradale encapsulates supreme track performance with breathtaking Italian luxury design.
+                    </p>
+
+                    <!-- Quick Spec Grid -->
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="spec-badge p-4 rounded-xl">
+                            <span class="block text-xs uppercase tracking-wider text-neutral-500 font-medium">Power Output</span>
+                            <span class="text-xl font-bold text-white">986 HP</span>
+                        </div>
+                        <div class="spec-badge p-4 rounded-xl">
+                            <span class="block text-xs uppercase tracking-wider text-neutral-500 font-medium">0-60 mph</span>
+                            <span class="text-xl font-bold text-white">2.4 sec</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="#specs" class="bg-white hover:bg-neutral-200 text-black font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all shadow-lg">
+                            Explore Specs
+                        </a>
+                        <button class="border border-neutral-700 hover:border-red-500 text-white font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all">
+                            Book Test Drive
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Visual Preview Graphic -->
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-neutral-800 group">
+                        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Ferrari SF90 Stradale" 
+                             class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                             onerror="this.src='https://placehold.co/600x400/111111/ff1e1e?text=Ferrari+SF90+Stradale'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <span class="text-xs uppercase tracking-widest text-red-500 font-bold">V8 Twin-Turbo + 3 Electric Motors</span>
+                                <p class="text-sm font-semibold text-white mt-1">Maranello's Flagship Masterpiece</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full py-6 px-8 border-t border-neutral-900 text-center text-xs text-neutral-500 tracking-wider">
+        <p>&copy; 2026 Ferrari S.p.A. All rights reserved. Designed with exquisite Italian craftsmanship.</p>
+    </footer>
+
+</body>
+</html>
